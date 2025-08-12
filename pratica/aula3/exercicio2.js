@@ -10,15 +10,18 @@
 
 
 var readlineSync = require ('readline-sync');
-let produto = 334;
+let produto = 400
 let a_vista = produto - (produto * 0.15);
 let dinheiro = a_vista;
 let pix = a_vista;
 let cartao1x = produto - (produto * 0.1);
 let cartao2x = produto
 let cartao3xoumais = produto + (produto * 0.1);
+let cartao4x = cartao3xoumais
+let cartao5x = cartao3xoumais
 const formasdepagamento = ['"dinheiro"', '"PIX"', '"cartao"'];
-const qtdvezes = ['A vista', '2x', '3x ou mais'];
+const qtdvezes = ['A vista', '2x', '3x', '4x', '5x'];
+// Limite de 5x no cartão sugerido no exercício
 
 
 
@@ -31,22 +34,23 @@ if (index === 0 || index === 1 ){
 }
 
 else if (index === 2){
-    console.log(`O método cartão foi selecionado. Por favor, informe a quantidade de parcelas no pagamento com cartão.`);
-    index = readlineSync.keyInSelect(qtdvezes, "Em quantas vezes sera o pagamento?")
-    console.log(`A forma de pagamento do cartão "${qtdvezes[index]}" foi selecionado.`)
-
-    if (index === 0){
+    console.log(`O método cartão foi selecionado. Por favor, informe a quantidade de parcelas no pagamento com cartão (Máx de 5x)`);
+    qtdparcelas = readlineSync.keyInSelect(qtdvezes, "Em quantas vezes sera o pagamento?")
+    console.log(`A forma de pagamento do cartão "${qtdvezes[qtdparcelas]}" foi selecionado.`)
+}
+    if (qtdparcelas === 0){
     console.log(`Valor total: R$${(cartao1x).toFixed(2)}.`);
 }
-    else if (index === 1){
-    console.log(`Método de compra em 2x selecionado. Valor de cada parcela: R$${(cartao2x / 2).toFixed(2)} Valor total: R$${cartao2x}.`);    
+    else if (qtdparcelas === 1){
+    console.log(`Método de compra em 2x selecionado: Valor de cada parcela: R$${(cartao2x / 2).toFixed(2)}. Valor total: R$${(cartao2x).toFixed(2)}.`);    
 }
-    else if (index === 2){
-    console.log(`Método de compra em 3x ou mais selecionado. Valor de cada parcela R${(cartao3xoumais / 3).toFixed(2)} Valor total: R$${cartao3xoumais}.`);
+    else if (qtdparcelas === 2){
+    console.log(`Método de compra em 3x selecionado: Valor de cada parcela R$${(cartao3xoumais / 3).toFixed(2)}. Valor total: R$${(cartao3xoumais).toFixed(2)}.`);
 }
+    else if (qtdparcelas === 3){
+    console.log(`Método de compra em 4x selecionado: Valor de cada parcela R$${(cartao4x / 4).toFixed(2)}. Valor total: R$${(cartao4x).toFixed(2)}.`);
+}
+    else if (qtdparcelas === 4){
+    console.log(`Método de compra em 5x selecionado: Valor de cada parcela R$${(cartao5x / 5).toFixed(2)}. Valor total: R$${(cartao5x).toFixed(2)}.`);
 
 }
-
-
-
-

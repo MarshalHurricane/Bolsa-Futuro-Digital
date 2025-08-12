@@ -23,7 +23,7 @@ else if (metodoDePagamento === 2) { // 2 for 'cartao'
   console.log(`A forma de pagamento do cartão ${qtdvezes[parcelas]} foi selecionada.`);
 
   if (parcelas === 0) { // 0 for 'A vista'
-    console.log(`Valor total: R$${cartao1x}.`);
+    console.log(`Valor total: R$${cartao1x.toFixed(2)}.`);
   }
   else if (parcelas === 1) { // 1 for '2x'
     console.log(`O valor de cada parcela é de R$${(cartao2x / 2).toFixed(2)}. Valor total: R$${cartao2x.toFixed(2)}.`);
