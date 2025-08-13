@@ -1,7 +1,9 @@
 // Todos vão receber acréscimos de 3%, então fica (x + (x * 0.03)).
 // Igual ou inferior à R$1050,00 recebe mais R$200,00.
 
-let salario = 1000
+const rl = require('readline-sync')
+
+let salario = rl.questionFloat("Informe o valor do seu salario: ")
 const reajuste1 = salario + (salario * 0.03)
 const abono = 200
 const reajuste2 = reajuste1 + abono
