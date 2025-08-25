@@ -20,7 +20,7 @@ mostrarProdutos(produtos)
 
 let escolhaProduto = (rl.question(`Qual produto voce deseja?`)).toLowerCase()
 
-//flag para encontrar o produto
+//conceito de "flag" para encontrar o produto
 let produtoEncontrado = false;
 
 
