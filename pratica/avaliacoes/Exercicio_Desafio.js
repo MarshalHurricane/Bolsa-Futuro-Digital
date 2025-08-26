@@ -11,6 +11,7 @@ const produtos = [
 ]
 
 function mostrarProdutos(produtos) {
+    console.log("\n Lista de produtos disponiveis: \n")
     for (let i = 0; i < produtos.length; i++) {
         console.log(produtos[i])
     }
@@ -18,29 +19,37 @@ function mostrarProdutos(produtos) {
 
 mostrarProdutos(produtos)
 
-let escolhaProduto = (rl.question(`Qual produto voce deseja?`)).toLowerCase()
-
 //conceito de "flag" para encontrar o produto
 let produtoEncontrado = false;
+let indiceProduto = null
 
+do {
+let escolhaProduto = (rl.question(`\n Qual produto voce deseja? \n `)).toLowerCase()
 
 for (let i = 0; i < produtos.length; i++) {
     if (escolhaProduto == produtos[i].nome) {
         produtoEncontrado = true;
+        indiceProduto = i
         break
     }
 }
 
 if (!produtoEncontrado) {
     console.log("Por favor, insira um produto valido.")
-    return
+    mostrarProdutos(produtos)
+    }
+} while (!produtoEncontrado)
+
+let quantidadeProduto = Number(rl.question(`Qual a quantidade desejada? \n `))
+
+if (quantidadeProduto <= produtos[indiceProduto].quantidade) {
+    produtos[indiceProduto].quantidade -= quantidadeProduto
+    let valorTotal = produtos[indiceProduto].preco * quantidadeProduto
+    console.log(`O valor total da compra fica em R$${(valorTotal).toFixed(2)} \n`)
 }
-    
+    else {
+        console.log("Quantidade indisponivel, insira uma quantidade valida.")
+    }
 
-
-
-
-let quantidade = Number(rl.question(`Qual a quantidade desejada?`))
-
-
+mostrarProdutos(produtos)
 
