@@ -17,20 +17,6 @@ function numeroPar() {
 numeroPar()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
     exemplo utilizando "For elementos of array":
 
