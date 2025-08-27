@@ -7,7 +7,10 @@ const vendasLoja = [
 ]
 
 function totalVendas() {
-    vendasLoja.quantidade * vendasLoja.precoUnitario
+    for (let i = 0; i < vendasLoja.length; i++) {
+        console.log(vendasLoja[i].quantidade * vendasLoja[i].precoUnitario)
+    }
+    
 }
 
 console.log(totalVendas(vendasLoja))
