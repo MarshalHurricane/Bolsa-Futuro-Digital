@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Você tem um array de objetos representando vendas de uma vendasLoja. Cada objeto possui produto, quantidade e precoUnitario.Cada
     Crie uma função que calcula o total de uma venda (quantidade * precoUnitario). 
@@ -6,6 +7,8 @@ Você tem um array de objetos representando vendas de uma vendasLoja. Cada objet
     * Ao final, imprime "TOtal vendido na loja: TOTAL_GERAL reais"
 */
 
+=======
+>>>>>>> ab3a6e7e1ef0496662e20c867ad0913788562145
 const vendasLoja = [
     {produto: "nutela140g", quantidade: 30, precoUnitario: 12.99},
     {produto: "ouroBranco1kg", quantidade: 45, precoUnitario: 54.99},
@@ -14,6 +17,7 @@ const vendasLoja = [
     {produto: "finiTubes180g", quantidade: 88, precoUnitario: 8.99}
 ]
 
+<<<<<<< HEAD
 
 
 function totalVendas(vendas) {
@@ -36,3 +40,13 @@ function relatorioVendas() {
 
 vendasLoja.forEach (totalVendas)
 relatorioVendas()
+=======
+function totalVendas() {
+    for (let i = 0; i < vendasLoja.length; i++) {
+        console.log(vendasLoja[i].quantidade * vendasLoja[i].precoUnitario)
+    }
+    
+}
+
+console.log(totalVendas(vendasLoja))
+>>>>>>> ab3a6e7e1ef0496662e20c867ad0913788562145
