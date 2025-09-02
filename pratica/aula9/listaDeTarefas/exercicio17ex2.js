@@ -1,4 +1,3 @@
-// arquivo: app.js
 import readline from 'readline-sync';
 
 import { adicionarTarefa, listarTarefas, removerTarefa } from './exercicio17ex.js';
@@ -29,7 +28,7 @@ function executar() {
         break;
       case '3':
         const indiceParaRemover = readline.question("Qual o numero da tarefa que deseja remover? ");
-        // Converte a entrada para um número inteiro
+       
         removerTarefa(Number(indiceParaRemover));
         break;
       case '4':
