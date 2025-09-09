@@ -1,6 +1,3 @@
-import readline from "readline-sync"
-
-
 class Carro {
     constructor (modelo,marca,cor,anoLancamento,velocidade) {
 
