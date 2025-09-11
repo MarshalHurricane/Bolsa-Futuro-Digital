@@ -24,6 +24,6 @@ export class Pessoa {
     } 
 }
 
-const Pessoa1 = new Pessoa ("fulano", "30", "Rua Andorinha", 21976694332, 17456782450, 546348925639)
+const Pessoa1 = new Pessoa ("Fulano", "30", "Rua Andorinha", 21976694332, 17456782450, 546348925639)
 
 Pessoa1.mostrarDados();
