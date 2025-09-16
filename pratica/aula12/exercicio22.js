@@ -12,7 +12,7 @@ import { Pessoa } from "./exercicio21.js"
 class PessoaFisica extends Pessoa {
     #cpf
     constructor (nome, idade, endereco, contato, cpf) {
-        super(nome, idade, endereço, contato)
+        super(nome, idade, endereco, contato)
         this.#cpf = cpf
     }
      mostrarDados() {
