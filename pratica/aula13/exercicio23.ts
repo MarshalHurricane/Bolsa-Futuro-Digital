@@ -24,9 +24,9 @@ class ContaBancaria {
     }
 
     juros(porcentagemjuros:number) {
-        const resultJuros
-        resultJuros = this.debitarSaldo() * porcentagemjuros
-        console.log(`Atraso no pagamento. Valor debitado: ${this.debitarSaldo} + ${porcentagemjuros}.\n
+        let resultJuros: any
+        resultJuros = this.saldo * porcentagemjuros
+        console.log(`Atraso no pagamento. Valor debitado: ${this.debitarSaldo} + ${resultJuros}.\n
              Total = ${resultJuros}`)
 
 
