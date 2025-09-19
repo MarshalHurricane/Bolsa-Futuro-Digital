@@ -1,30 +1,39 @@
-/*
-    Biblioteca digital 
-    1 Classe ~> Livro 
-    1 Classe ~> Autor
-    relacionamento entre elas :
-    1-N, N-N ou 1-1?
-
-    opcional: 1 método para retornar todos os livros do Autor e modulacao separando as classes em cada arquivo. 
-*/
-
 import { Autor } from "./Autor";
 
 export class Livro {
     nome: string;
-    autor: Autor[];
+    autores: Autor[];
     editora: string;
     ano: number;
 
-    constructor (nome:string, autor:[],editora:string,ano:number) {
+    constructor (nome:string,editora:string,ano:number) {
         this.nome = nome;
         this.editora = editora;
         this.ano = ano;
+        this.autores = [];
     }
-}
+
+        adicionarAutor(autor: Autor) {
+            this.autores.push(autor);
+            autor.adicionarLivro(this);
+            console.log(`O autor ${autor.nome} foi adicionado ao livro ${this.nome}.`);
+        }
+        mostrarAutores() {
+            if (this.autores.length == 0) {
+                console.log ("Esse livro nao possui autores registrados.");
+                return;
+            }
+                this.autores.forEach(autor => {
+                    console.log(`Autor: ${autor.nome}.`);
+
+                })
+            }
+        }
 
 
-const Livro1 = new Livro ("Fundacao", [], "Aleph", 2009)
-const Livro2 = new Livro ("FundacaoEImperio", [], "Aleph", 2009)
-const Livro3 = new Livro ("SegundaFudacao", [], "Aleph", 2009)
-const Livro4 = new Livro ("OHobbit", [], "Tolkien", 1937)
+
+
+const Livro1 = new Livro ("Fundacao", "Aleph", 2009);
+const Livro2 = new Livro ("FundacaoEImperio", "Aleph", 2009);
+const Livro3 = new Livro ("SegundaFudacao", "Aleph", 2009);
+const Livro4 = new Livro ("OHobbit", "Tolkien", 1937);
