@@ -16,12 +16,12 @@ import { Emprestimo } from "./Emprestimo";
 
 
 const livro1 = new Livro ("Fundacao", "Aleph", 2009);
-const livro2 = new Livro ("FundacaoEImperio", "Aleph", 2009);
-const livro3 = new Livro ("SegundaFudacao", "Aleph", 2009);
-const livro4 = new Livro ("OHobbit", "GeorgeAllen&UnwinLtd", 1937);
-const livro5 = new Livro ("SonhoDeUmaNoiteDeVerao", "L&PMPocket",2001);
+const livro2 = new Livro ("Fundacao E Imperio", "Aleph", 2009);
+const livro3 = new Livro ("Segunda Fudacao", "Aleph", 2009);
+const livro4 = new Livro ("O Hobbit", "GeorgeAllen&UnwinLtd", 1937);
+const livro5 = new Livro ("Sonho De Uma Noite De Verao", "L&PMPocket",2001);
 const livro6 = new Livro ("Hamlet", "PinguimCompanhia", 2015);
-const livro7 = new Livro ("BiologiaMolecularDaCelula", "artmed", 2017);
+const livro7 = new Livro ("Biologia Molecular Da Celula", "artmed", 2017);
 const autor1 = new Autor ("Isaac Asimov");
 const autor2 = new Autor ("Tolkien");
 const autor3 = new Autor ("Shakespeare");
@@ -61,10 +61,15 @@ const emprestimo5 = Emprestimo.emprestar(livro5, usuario4);
 
 //Testando emprestar livro que já foi emprestado:
 const emprestimo6 = Emprestimo.emprestar(livro5, usuario5);
-const devolver1 = emprestimo5.devolver()
+if (emprestimo5) {
+    emprestimo5.devolver()
+    } else {
+            console.log("Não foi possível realizar a devolução, pois o empréstimo não foi bem-sucedido.");
+}
 
-//Testando emprestar após a devolução do livro
-const memprestimo7 = Emprestimo.emprestar(livro5, usuario5);
+
+//Testando emprestar após a devolução do livro:
+const emprestimo7 = Emprestimo.emprestar(livro5, usuario5);
 
 const emprestimo8 = Emprestimo.emprestar(livro6, usuario6);
 const emprestimo9 = Emprestimo.emprestar(livro7, usuario6);

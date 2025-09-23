@@ -18,8 +18,7 @@ export class Livro {
                 autor.adicionarLivro(this);
                 console.log(`O autor ${autor.nome} foi adicionado ao livro ${this.nome}.`);
             }
-
-            
+  
         }
         public adicionarAutores(listaDeAutores: Autor[]) {
             listaDeAutores.forEach(autor => {
