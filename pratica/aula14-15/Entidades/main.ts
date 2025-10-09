@@ -9,10 +9,10 @@
     Modulacao separando as classes em cada arquivo. 
 */
 
-import { Livro } from "./Livro";
-import { Autor } from "./Autor";
+import { Livro } from "./livro";
+import { Autor } from "./autor";
 import { Usuario } from "./Usuario";
-import { Emprestimo } from "./Emprestimo"; 
+import { Emprestimo } from "./emprestimo"; 
 
 
 const livro1 = new Livro ("Fundacao", "Aleph", 2009);

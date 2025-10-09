@@ -1,4 +1,4 @@
-import { Livro } from "./Livro";
+import { Livro } from "./livro";
 import { Usuario } from "./Usuario";
 
 export class Emprestimo {
