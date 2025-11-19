@@ -1,27 +1,18 @@
+import { Express } from "express";
 import { Router } from "express";
+import { Request, Response } from "express";
 
+const app = Express();
 const router = Router();
-
-
-
-
-/*const app = express();
 const port = 3000;
 
-const router = Router();
 
-router.get("/Estoque", (req : Request, res : Response) => {
-    res.status(200).json(estoque);
-})
 
 router.post("/inserirProduto", (req , res) => {
-    const { id, nome, preco } = req.body
-    const produto = new Produto(id, nome, preco)
+    const { nome, preco } = req.body
+    const produto = new Produto(nome, preco)
 
     res.send("Produto cadastrado com sucesso.")
 })
 
 export default router;
-*/
-
-

@@ -1,20 +1,13 @@
-//por usar ts, necessario request/response
-import express , { Request , Response } from "express";
-import { Express } from "express";
-import { Produto } from "./Produto";
-import produtoRouter from
+import express from "express";
+import router from "./src/router/Produto.router";
 
 const app = express();
-app.use(express.json());
+app.use(express.json);
 const PORT = 3000;
 
-app.use("/api", produtorouter)
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`))
+
+app.use("/", router)
 
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost: ${PORT}`);
-});
-
-
-
-
+export default app;
