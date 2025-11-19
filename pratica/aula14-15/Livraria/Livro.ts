@@ -1,4 +1,4 @@
-import { Autor } from "./autor";
+import { Autor } from "./Autor";
 
 export class Livro {
     nome: string;

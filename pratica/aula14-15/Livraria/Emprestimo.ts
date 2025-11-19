@@ -1,5 +1,5 @@
-import { Livro } from "./livro";
-import { Usuario } from "./Usuario";
+import { Livro } from "./Livro";
+import { Usuario } from "../Barbearia/Entidades/usuario";
 
 export class Emprestimo {
 
