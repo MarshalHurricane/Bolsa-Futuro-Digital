@@ -1,5 +1,5 @@
 class Produto {
-    constructor (public NomeProduto: string, public Preco: number){
+    constructor (public NomeProduto: string, public Preco: number, public id?: number){
     }
 }
 

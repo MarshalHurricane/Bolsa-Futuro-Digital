@@ -2,7 +2,7 @@ import { Express } from "express";
 import { Router } from "express";
 import { Request, Response } from "express";
 
-const app = Express();
+
 const router = Router();
 const port = 3000;
 
