@@ -1,8 +1,12 @@
-import mysql from "mysql2/promise"
+import { createPool, Pool } from "mysql2/promise";
 
-export const bd = mysql.createPool({
+
+export const bd: Pool = createPool({
     host: 'localhost',
     user: 'root',
-    password: '12345',
+    password: '12345', 
     database: 'Produtos',
-})
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+}) as any;

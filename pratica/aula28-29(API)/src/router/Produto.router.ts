@@ -1,18 +1,13 @@
-import { Express } from "express";
 import { Router } from "express";
-import { Request, Response } from "express";
+import { ProdutoController } from "../controller/Produto.controller";
 
-const app = Express();
 const router = Router();
-const port = 3000;
+const controller = new ProdutoController();
 
-
-
-router.post("/inserirProduto", (req , res) => {
-    const { nome, preco } = req.body
-    const produto = new Produto(nome, preco)
-
-    res.send("Produto cadastrado com sucesso.")
-})
+router.post("/produtos", controller.cadastrar);
+router.get("/produtos", controller.listar);
+router.get("/produtos/:id", controller.buscarPorId);
+router.put("/produtos/:id", controller.atualizar);
+router.delete("/produtos/:id", controller.deletar);
 
 export default router;

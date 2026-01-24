@@ -1,7 +1,9 @@
-class Produto {
-    constructor (public NomeProduto: string, public Preco: number){
-    }
+export class Produto {
+    constructor(
+        public nome: string,
+        public especificacao: string,
+        public preco: number,
+        public quantidade: number,
+        public id?: number
+    ) {}
 }
-
-export default Produto;
-
