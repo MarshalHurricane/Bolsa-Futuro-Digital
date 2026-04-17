@@ -1,18 +1,24 @@
-import { Express } from "express";
+// src/routes/Produto.routes.ts
 import { Router } from "express";
-import { Request, Response } from "express";
-
+import { 
+    inserirProduto, 
+    buscarProduto, 
+    atualizarProduto, 
+    deletarProduto 
+} from "../controller/Produto.controller";
 
 const router = Router();
-const port = 3000;
 
+// CREATE - POST /produtos
+router.post("/produtos", inserirProduto);
 
+// GET - GET /produtos/:id (com parâmetro)
+router.get("/produtos/:id", buscarProduto);
 
-router.post("/inserirProduto", (req , res) => {
-    const { nome, preco } = req.body
-    const produto = new Produto(nome, preco)
+// UPDATE - PUT /produtos/:id
+router.put("/produtos/:id", atualizarProduto);
 
-    res.send("Produto cadastrado com sucesso.")
-})
+// DELETE - DELETE /produtos/:id
+router.delete("/produtos/:id", deletarProduto);
 
 export default router;
