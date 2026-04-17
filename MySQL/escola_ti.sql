@@ -20,7 +20,7 @@ CREATE TABLE Matricula (
     fk_curso INT NOT NULL,      
     fk_aluno INT NOT NULL,      
     data_matricula DATE,        
-    valor DECIMAL(10, 2),      
+    valor DECIMAL(10, 2), NOT NULL DEFAULT 0,00,
     
     PRIMARY KEY (fk_curso, fk_aluno),
     FOREIGN KEY (fk_curso) REFERENCES Curso(codigo),
@@ -88,7 +88,7 @@ JOIN Matricula m ON c.codigo = m.fk_curso
 GROUP BY c.nome WITH ROLLUP;
 
 -- 7. Valor médio pago em matrícula na escola (2 casas decimais). 
-SELECT CAST(AVG(valor) AS DECIMAL(10,2)) AS 'Valor Médio'
+SELECT CAST(AVG(COALESCE(valor)) AS DECIMAL(10,2)) AS 'Valor Médio'
 FROM Matricula;
 
 -- 8. Nome e valor médio de matrícula de cada curso (2 casas decimais).

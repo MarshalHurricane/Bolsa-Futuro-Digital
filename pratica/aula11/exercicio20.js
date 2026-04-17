@@ -20,7 +20,6 @@ class Carro {
         this.velocidade -= valor;
         if (this.velocidade < 0) {
             this.velocidade = 0;
-            return `O carro ${this.modelo} freiou. Velocidade atual de ${this.velocidade}km/h.`;
         }
         return `O carro ${this.modelo} freiou. Velocidade atual de: ${this.velocidade}km/h.`;
         

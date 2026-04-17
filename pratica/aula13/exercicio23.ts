@@ -23,15 +23,18 @@ class ContaBancaria {
         console.log(`Valor debitado: ${valor}. Saldo restante: ${resultDebito}.`)
     }
 
-    juros(porcentagemjuros:number) {
-        let resultJuros: any
-        resultJuros = this.saldo * porcentagemjuros
-        console.log(`Atraso no pagamento. Valor debitado: ${this.debitarSaldo} + ${resultJuros}.\n
-             Total = ${resultJuros}`)
+    juros(porcentagemjuros: number) {
 
+    let valorJuros = this.saldo * porcentagemjuros;
+    
+    let saldoAnterior = this.saldo;
 
- 
-    }
+    this.saldo -= valorJuros;
+
+    console.log(`Atraso no pagamento.`);
+    console.log(`Saldo anterior: ${saldoAnterior} | Juros aplicado: ${valorJuros}`);
+    console.log(`Novo saldo após juros: ${this.saldo}`);
+}
 
     tarifaConsulta (tarifaCons:number) {
         const resultTarifa = this.saldo -= tarifaCons;
